@@ -1,0 +1,43 @@
+<div class="nav-container">
+  <mat-toolbar color="primary" class="nav-toolbar">
+            <button mat-icon-button (click)="sidenav.toggle()">
+              <mat-icon vertical-align-middle>menu</mat-icon>
+            </button>
+            <h1 id="main-title">HeySquad</h1>
+          </mat-toolbar>
+  
+    <mat-sidenav-container class="sidenav-container" [hasBackdrop]="isSmallScreen">
+        
+  
+      <mat-sidenav #sidenav class="sidenav" mode="over" [opened]="screenWidth > 840" role="navigation">
+        <h2 id="sidenav-greeting">{{ daytimeGreeting }}</h2>
+        <a [routerLink]="['/profile']"  id="accountLink">
+          <mat-icon>account_box</mat-icon>
+          <small>{{ displayName }}</small>
+        </a>
+        <mat-divider></mat-divider>
+      <br>
+      <mat-list>
+        <a mat-list-item [routerLink]="['/dashboard']" routerLinkActive="active-link" (click)="closeSidenavOnSmallScreen()" id="accountLink">
+          <mat-icon>home</mat-icon>
+          Dashboard
+        </a>
+        <!-- <a mat-list-item [routerLink]="['/groupmanager']" routerLinkActive="active-link" (click)="closeSidenavOnSmallScreen()">
+          <mat-icon>group</mat-icon>
+          Group-Manager
+        </a> -->
+        <a mat-list-item [routerLink]="['/settings']" routerLinkActive="active-link" (click)="closeSidenavOnSmallScreen()" id="accountLink">
+          <mat-icon>settings</mat-icon>
+          Settings
+        </a>
+      </mat-list>
+        <mat-icon (click)="logoutViaNavButton()" id="logoutButton">exit_to_app</mat-icon>
+      </mat-sidenav>
+      <mat-sidenav-content>
+      <div class="sidenav-content" role="main">
+        <router-outlet></router-outlet>
+      </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+  

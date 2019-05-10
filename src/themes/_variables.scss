@@ -1,0 +1,5 @@
+@import '~@angular/material/theming';
+
+$peachy-primary: mat-palette($mat-deep-orange, 300);
+$peachy-accent : mat-palette($mat-orange, 100);
+$peachy-warn : mat-palette($mat-red);

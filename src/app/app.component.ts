@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'HeySquad1';
+
+  showNav: boolean;
+
+  constructor(private auth: AuthService) {
+    this.showNav = this.auth.isSignedIn();
+    console.log('app.comp.ts init: ' + this.auth.isSignedIn());
+  }
+
 }

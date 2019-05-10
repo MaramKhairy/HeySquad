@@ -1,0 +1,90 @@
+.nav-container {
+    height: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  
+  #main-title {
+    font-family: 'Megrim', cursive;
+    margin-left: 5px;
+  }
+  
+  .sidenav-container {
+    width: 100%;
+    height: calc(100vh - 64px);
+    background-color: #f4edd8;
+  }
+  
+  .sidenav-content {
+    display: flex;
+    height: calc(100vh - 64px);
+    margin-left: 5vw;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sidenav {
+    padding: 20px;
+    min-width: 10vw;
+    background-color: #fff9c4;
+    background-image: linear-gradient(147deg, #fff9c4 28%, #ff8a65 100%);
+  }
+  
+  #sidenav-greeting {
+    font-weight: bold;
+  }
+  
+  .mat-list-item {
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  
+  
+  .mat-list-item:hover, #logoutButton:hover {
+    cursor: pointer;
+    background-color: #fbbe9e;
+    border-radius: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .active-link {
+    background-color: #ff9d8b;
+    border-radius: 10px;
+  }
+  
+  #accountLink {
+    color: black;
+  }
+  
+  mat-icon {
+    margin-right: 7px;
+  }
+  
+  #logoutButton {
+    bottom: 2vh;
+    position: absolute;
+  }
+  
+  @media (max-width: 840px) {
+  
+    .sidenav-container {
+      width: 100%;
+      height: calc(100vh - 56px);
+      background-color: #f4edd8;
+    }
+    
+    .sidenav-content {
+      display: flex;
+      height: calc(100vh - 56px);
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+    }
+  
+    .sidenav {
+      width: auto;
+      
+    }
+  
+  }
