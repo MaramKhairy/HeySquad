@@ -1,3 +1,24 @@
-<p>
-  login-page works!
-</p>
+<div id="container">
+  <br>
+  <br>
+  <h1 id="heading">Booty Clap</h1>
+
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="gappx">
+    <mat-card id="loginCard">
+      <mat-card-content>
+        <mat-tab-group>
+          <mat-tab label="Login">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="gappx">
+              <app-sign-in></app-sign-in>
+            </div>
+          </mat-tab>
+          <mat-tab label="Join us!">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="gappx">
+              <app-sign-up></app-sign-up>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
