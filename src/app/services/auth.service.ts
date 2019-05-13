@@ -77,9 +77,9 @@ export class AuthService {
   setDisplayName(user: firebase.User, name: string) {
     user.updateProfile({
       displayName: name
-    }).then(function(response) {
+    }).then(function (response) {
       console.log('Display Name set to ' + user.displayName);
-    }, function(error) {
+    }, function (error) {
       console.log(error + ' could not set Display Name.');
     });
   }

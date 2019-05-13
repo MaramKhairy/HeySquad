@@ -8,17 +8,17 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router) { }
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      if (this.auth.isSignedIn()) {
-        console.log('access granted!');
-        return true;
-      } else {
-        console.log('access denied!');
+    if (this.auth.isSignedIn()) {
+      console.log('access granted!');
+      return true;
+    } else {
+      console.log('access denied!');
       this.router.navigate(['/login']);
       return false;
-      }
+    }
   }
 }

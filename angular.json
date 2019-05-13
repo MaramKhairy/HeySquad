@@ -3,17 +3,21 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "HeySquad1": {
+    "HeySquad": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/HeySquad1",
+            "outputPath": "dist/HeySquad",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,12 +35,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -45,25 +47,30 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "budgets": [{
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "HeySquad1:build"
+            "browserTarget": "HeySquad:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "HeySquad1:build:production"
+              "browserTarget": "HeySquad:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "HeySquad1:build"
+            "browserTarget": "HeySquad:build"
           }
         },
         "test": {
@@ -74,7 +81,6 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.scss",
               "src/styles.scss",
               "src/themes/themes.scss",
               "src/themes/_variables.scss"
@@ -100,19 +106,20 @@
         }
       }
     },
-    "HeySquad1-e2e": {
+    "HeySquad-e2e": {
       "root": "e2e/",
       "projectType": "application",
+      "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "HeySquad1:serve"
+            "devServerTarget": "HeySquad:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "HeySquad1:serve:production"
+              "devServerTarget": "HeySquad:serve:production"
             }
           }
         },
@@ -128,5 +135,5 @@
       }
     }
   },
-  "defaultProject": "HeySquad1"
+  "defaultProject": "HeySquad"
 }
